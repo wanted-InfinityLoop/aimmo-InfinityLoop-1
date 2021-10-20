@@ -34,3 +34,23 @@ class PostingListView(View):
             return JsonResponse({"result": result}, status=200)
         except KeyError:
             return JsonResponse({"message": "KEY_ERROR"}, status=400)
+
+
+class PostingView(View):
+    def get(self, request, posting_id):
+        if not Posting.objects.filter(id=posting_id).exists():
+            return JsonResponse(
+                {"message": f"POSTING_{posting_id}_NOT_FOUND"}, status=404
+            )
+
+        posting = Posting.objects.get(id=posting_id)
+
+        result = {
+            "id": posting.id,
+            "author": posting.author.name,
+            "title": posting.title,
+            "text": posting.text,
+            "created_time": posting.created_time,
+            "updated_time": posting.updated_time,
+        }
+        return JsonResponse({"result": result}, status=200)
