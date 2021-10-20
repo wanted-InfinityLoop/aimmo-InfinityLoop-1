@@ -23,7 +23,7 @@ class PostingView(View):
             "title": posting.title,
             "text": posting.text,
             "created_time": posting.created_time,
-            "updated_time": posting.updated_at,
+            "updated_at": posting.updated_at,
         }
         return JsonResponse({"result": result}, status=200)
 
@@ -109,7 +109,7 @@ class PostingListView(View):
                         "title": posting.title,
                         "text": posting.text,
                         "created_time": posting.created_time,
-                        "updated_time": posting.updated_at,
+                        "updated_at": posting.updated_at,
                     }
                     for posting in postings
                 ],
