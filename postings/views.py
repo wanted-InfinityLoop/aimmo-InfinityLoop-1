@@ -11,10 +11,12 @@ from core.utils import login_decorator
 class PostingListView(View):
     def get(self, request):
         try:
-            OFFSET = request.GET.get("offset", 0)
-            LIMIT = request.GET.get("limit", 30)
+            OFFSET = int(request.GET.get("offset", 0))
+            LIMIT = int(request.GET.get("limit", 10))
 
-            postings = Posting.objects.all().order_by("-created_time")
+            postings = Posting.objects.all().order_by("-created_time")[
+                OFFSET : OFFSET + LIMIT
+            ]
 
             result = {
                 "count": postings.aggregate(count=Count("id")).get("count", 0),
@@ -25,10 +27,10 @@ class PostingListView(View):
                         "title": posting.title,
                         "text": posting.text,
                         "created_time": posting.created_time,
-                        "updated_time": posting.updated_time,
+                        "updated_time": posting.updated_at,
                     }
                     for posting in postings
-                ][OFFSET : LIMIT + OFFSET],
+                ],
             }
 
             return JsonResponse({"result": result}, status=200)
@@ -51,6 +53,24 @@ class PostingView(View):
             "title": posting.title,
             "text": posting.text,
             "created_time": posting.created_time,
-            "updated_time": posting.updated_time,
+            "updated_time": posting.updated_at,
         }
         return JsonResponse({"result": result}, status=200)
+
+    @login_decorator
+    def post(self, request):
+        try:
+            data = json.loads(request.body)
+            user = request.user
+
+            posting = Posting.objects.create(
+                title=data["title"],
+                text=data["text"],
+                author=user,
+            )
+
+            return JsonResponse(
+                {"message": f"{posting.title} has successfully posted"}, status=201
+            )
+        except KeyError:
+            return JsonResponse({"message": "KEY_ERROR"}, status=400)

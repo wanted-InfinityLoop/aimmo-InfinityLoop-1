@@ -9,12 +9,14 @@ from users.models import User
 def login_decorator(func):
     def wrapper(self, request, *args, **kwargs):
         try:
-            access_token = request.headers.get("Authorization", None)
+            auth_header = request.headers.get("Authorization", None)
 
-            if not (access_token and access_token.startwith("Bearer")):
+            if not (auth_header and auth_header.startswith("Bearer ")):
                 return JsonResponse({"message": "AUTH_ERROR"}, status=401)
 
-            payload = jwt.decode(access_token, MY_SECRET_KEY, algorithms="HS256")
+            token = auth_header.split(" ")[1]
+
+            payload = jwt.decode(token, MY_SECRET_KEY, algorithms="HS256")
             request.user = User.objects.get(id=payload["id"])
 
         except jwt.exceptions.DecodeError:
