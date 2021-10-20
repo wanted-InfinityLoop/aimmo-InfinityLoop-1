@@ -68,6 +68,27 @@ class PostingView(View):
         except KeyError:
             return JsonResponse({"message": "KEY_ERROR"}, status=400)
 
+    @login_decorator
+    def delete(self, request, posting_id):
+        try:
+            if not Posting.objects.filter(id=posting_id).exists():
+                return JsonResponse(
+                    {"message": f"POSTING_{posting_id}_NOT_FOUND"}, status=404
+                )
+
+            posting = Posting.objects.get(id=posting_id)
+
+            if request.user.id != posting.author_id:
+                return JsonResponse({"message": "FORBIDDEN"}, status=403)
+
+            posting.delete()
+
+            return JsonResponse(
+                {"message": f"{posting.title} has successfully deleted"}, status=204
+            )
+        except KeyError:
+            return JsonResponse({"message": "KEY_ERROR"}, status=400)
+
 
 class PostingListView(View):
     def get(self, request):
