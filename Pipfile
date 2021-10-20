@@ -9,6 +9,7 @@ django-cors-headers = "*"
 bcrypt = "*"
 cryptography = "*"
 pyjwt = "*"
+ipython = "*"
 
 [dev-packages]
 
