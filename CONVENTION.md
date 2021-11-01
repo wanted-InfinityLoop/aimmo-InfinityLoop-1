@@ -41,9 +41,12 @@ import os
 import sys
 import json
 
-from django.views import View
-from django.http  import HttpResponse
+from django.views     import View
+from django.http      import HttpResponse
 from django.db.models import Q
+
+from users.models  import User, Admin
+from boards.models import Board
 ```
 
 # Branch Rule
