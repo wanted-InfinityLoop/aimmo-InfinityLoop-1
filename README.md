@@ -25,7 +25,21 @@
 - Project폴더 안에 my_settings.py 파일 생성 후 내용 추가
 - **`my_settings.py`** data structure
 ```py
-(내용 삽입)
+MY_SECRET_KEY = "<SECRET_KEY>"
+MY_DATABASES = {
+    "default": {
+        "ENGINE": "djongo",
+        "NAME": "<DB NAME>",
+        "CLIENT": {
+            "host": "mongodb+srv://<username>:<password>@orange.nfaum.mongodb.net/<YourDatabase>?retryWrites=true&w=majority",
+            "port": 27017,
+            "username": "<username>",
+            "password": "<password>",
+            "authSource": "admin",
+            "authMechanism": "SCRAM-SHA-1",
+        },
+    }
+}
 ```
 
 ### Commnads
@@ -48,7 +62,7 @@ python manage.py runserver
 - MongoDB
 - AWS(EC2)
 
-### Cowork (혹은 Cooperation)
+### Cowork
 - Git, Github Project
 - Swagger2.0 (For API Document)
 - Slack
