@@ -1,6 +1,7 @@
 from django.db import models
 
 from core.models import TimeStamp
+from users.models import User
 
 
 class Category(models.Model):
@@ -20,3 +21,13 @@ class Posting(TimeStamp):
 
     class Meta:
         db_table = "postings"
+
+
+class Comment(TimeStamp):
+    content = models.CharField(max_length=216)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    posting = models.ForeignKey(Posting, on_delete=models.CASCADE)
+    parent_comment = models.ForeignKey('self', on_delete=models.CASCADE, null=True)
+
+    class Meta:
+        db_table = "comments"
