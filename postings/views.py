@@ -1,14 +1,22 @@
 import json
 
+from rest_framework.views import APIView
+from drf_yasg.utils import swagger_auto_schema
+from drf_yasg import openapi
+
 from django.http import JsonResponse
 from django.views import View
-from django.db.models import Count
 
 from .models import Posting
 from core.utils import login_decorator
+from .serializer import PostingSerializer
 
 
-class PostingView(View):
+class PostingView(APIView):
+    '''
+    # 게시글 불러오기
+    '''
+
     def get(self, request, posting_id):
         if not Posting.objects.filter(id=posting_id).exists():
             return JsonResponse(
@@ -25,26 +33,18 @@ class PostingView(View):
             "created_time": posting.created_time,
             "updated_at": posting.updated_at,
         }
-        return JsonResponse({"result": result}, status=200)
-
-    @login_decorator
-    def post(self, request):
-        try:
-            data = json.loads(request.body)
-            user = request.user
-
-            posting = Posting.objects.create(
-                title=data["title"],
-                text=data["text"],
-                author=user,
-            )
-
-            return JsonResponse(
-                {"message": f"{posting.title} has successfully posted"}, status=201
-            )
-        except KeyError:
-            return JsonResponse({"message": "KEY_ERROR"}, status=400)
-
+        return JsonResponse({"result": result}, status=200)    
+    
+    '''
+    # 게시글 수정
+    '''
+    parameter_token = openapi.Parameter(
+        "Authorization",
+        openapi.IN_HEADER,
+        description = "access_token",
+        type = openapi.TYPE_STRING
+    )
+    @swagger_auto_schema(request_body = PostingSerializer, manual_parameters = [parameter_token])
     @login_decorator
     def put(self, request, posting_id):
         try:
@@ -68,6 +68,12 @@ class PostingView(View):
         except KeyError:
             return JsonResponse({"message": "KEY_ERROR"}, status=400)
 
+
+    '''
+    # 게시글 삭제
+    '''
+
+    @swagger_auto_schema(manual_parameters = [parameter_token])
     @login_decorator
     def delete(self, request, posting_id):
         try:
@@ -90,7 +96,42 @@ class PostingView(View):
             return JsonResponse({"message": "KEY_ERROR"}, status=400)
 
 
-class PostingListView(View):
+class PostingCreateView(APIView):
+    '''
+    # 게시글 작성
+    '''
+
+    parameter_token = openapi.Parameter(
+        "Authorization",
+        openapi.IN_HEADER,
+        description = "access_token",
+        type = openapi.TYPE_STRING
+    )
+    @swagger_auto_schema(request_body = PostingSerializer, manual_parameters = [parameter_token])
+    @login_decorator
+    def post(self, request):
+        try:
+            data = json.loads(request.body)
+            user = request.user
+
+            posting = Posting.objects.create(
+                title=data["title"],
+                text=data["text"],
+                author=user,
+            )
+
+            return JsonResponse(
+                {"message": f"{posting.title} has successfully posted"}, status=201
+            )
+        except KeyError:
+            return JsonResponse({"message": "KEY_ERROR"}, status=400)
+
+
+class PostingListView(APIView):
+    '''
+    # 게시글 목록 불러오기
+    '''
+
     def get(self, request):
         try:
             OFFSET = int(request.GET.get("offset", 0))
@@ -101,7 +142,7 @@ class PostingListView(View):
             ]
 
             result = {
-                "count": postings.aggregate(count=Count("id")).get("count", 0),
+                "count": len(postings),
                 "postings": [
                     {
                         "id": posting.id,
