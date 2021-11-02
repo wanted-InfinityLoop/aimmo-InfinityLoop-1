@@ -8,10 +8,8 @@ from users.models import User
 
 class PostingCRUDTest(TestCase):
     def setUp(self):
-        User.objects.bulk_create([
-            User(id=1, name="Ted", email="hayejun1013@naver.com", password="abcd1234"),
-            User(id=2, name="Ted", email="hayejun1013@naver.co.kr", password="abcd1234")
-        ])
+        User.objects.create(id=1, name="Ted", email="hayejun1013@naver.com", password="abcd1234"),
+        User.objects.create(id=2, name="Ted", email="hayejun1013@naver.co.kr", password="abcd1234")
         
         Posting.objects.create(id=1, title="Title", text="text", author_id=1)
 
