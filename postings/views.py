@@ -15,14 +15,27 @@ class PostingView(APIView):
     '''
     # 게시글 불러오기
     '''
+    parameter_token = openapi.Parameter(
+        "Authorization",
+        openapi.IN_HEADER,
+        description = "access_token",
+        type = openapi.TYPE_STRING
+    )
 
+    @swagger_auto_schema(request_body = PostingSerializer, manual_parameters = [parameter_token])
+    @login_decorator
     def get(self, request, posting_id):
         if not Posting.objects.filter(id=posting_id).exists():
             return JsonResponse(
                 {"message": f"POSTING_{posting_id}_NOT_FOUND"}, status=404
             )
-
+        user = request.user
         posting = Posting.objects.get(id=posting_id)
+
+        if user not in posting.readers.all():
+            posting.readers.add(user)
+            posting.hits += 1
+            posting.save()
 
         result = {
             "id": posting.id,
@@ -30,6 +43,7 @@ class PostingView(APIView):
             "title": posting.title,
             "text": posting.text,
             "category": posting.category.name,
+            "hits": posting.hits,
             "created_time": posting.created_time,
             "updated_at": posting.updated_at,
         }
@@ -38,12 +52,7 @@ class PostingView(APIView):
     '''
     # 게시글 수정
     '''
-    parameter_token = openapi.Parameter(
-        "Authorization",
-        openapi.IN_HEADER,
-        description = "access_token",
-        type = openapi.TYPE_STRING
-    )
+    
     @swagger_auto_schema(request_body = PostingSerializer, manual_parameters = [parameter_token])
     @login_decorator
     def put(self, request, posting_id):

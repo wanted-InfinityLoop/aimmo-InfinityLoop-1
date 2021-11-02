@@ -15,6 +15,8 @@ class Posting(TimeStamp):
     text = models.TextField()
     author = models.ForeignKey("users.User", on_delete=models.CASCADE)
     category = models.ForeignKey(Category, null=True, on_delete=models.SET_NULL)
+    readers = models.ManyToManyField("users.User", related_name="postings")
+    hits = models.IntegerField(default=0)
 
     class Meta:
         db_table = "postings"
