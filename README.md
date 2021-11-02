@@ -51,6 +51,45 @@ python manage.py runserver
 
 <br>
 
+### Directory
+```
+.
+├── CONVENTION.md
+├── PULL_REQUEST_TEMPLATE.md
+├── README.md
+├── config
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── core
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   ├── utils.py
+│   └── views.py
+├── manage.py
+├── my_settings.py
+├── postings
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── serializer.py
+│   ├── tests.py
+│   ├── urls.py
+│   └── views.py
+├── requirements.txt
+└── users
+    ├── admin.py
+    ├── apps.py
+    ├── models.py
+    ├── serializer.py
+    ├── tests.py
+    ├── urls.py
+    └── views.py
+```
+
 # 🔖 Skills
 
 ### Backend
