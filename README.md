@@ -16,6 +16,10 @@
 
 # ⚒️ Project Build
 
+### Build(AWS EC2)
+API Base URL : http://3.36.105.251:8000
+API Document URL : http://3.36.105.251:8000/swagger/ (현재 접속시 에러가 나는 현상이 있음)
+
 ### Required
 - Python3.7🔺
 - Django (version 기입)🔺
@@ -146,6 +150,10 @@ python manage.py runserver
 
 > Sign Up
 
+**Request**
+![스크린샷 2021-11-03 오전 6 38 23](https://user-images.githubusercontent.com/42742076/139955395-f6977354-8f9c-418c-bbae-c8a0a4089127.png)
+
+
 1. 유저가 입력한 데이터 요청이 서버에 전송된다
 
 2. 데이터를 받은 서버는 데이터에 대한 유효성 검증 후 잘못된 형식의 타입 요청이 들어올 경우 에러를 반환한다
@@ -153,10 +161,15 @@ python manage.py runserver
 
 3. 정상적인 데이터의 경우 DB에 유저를 create한다   
 
+**Response**
+![스크린샷 2021-11-03 오전 6 39 04](https://user-images.githubusercontent.com/42742076/139955468-491823c9-9a59-4e63-9bc3-487c5aa17e55.png)
 
 <br>
 
 > Sign in
+
+**Request**
+![스크린샷 2021-11-03 오전 6 40 35](https://user-images.githubusercontent.com/42742076/139955640-adadd301-43e3-4789-9b02-3f040793e99f.png)
 
 1. 로그인을 위한 요청이 서버에 전송된다
 
@@ -165,9 +178,17 @@ python manage.py runserver
 
 3. 정상적인 데이터의 경우 로그인한 유저에 대한 토큰을 생성하여 전달한다 
 
+**Response**
+![스크린샷 2021-11-03 오전 6 41 03](https://user-images.githubusercontent.com/42742076/139955686-d906e41f-5364-4d6c-afe2-e33edea73a08.png)
+
+
 <br>
 
 > 게시글 Create
+
+**Request**
+![스크린샷 2021-11-03 오전 6 42 43](https://user-images.githubusercontent.com/42742076/139955874-a1bdf2a5-9250-4b4b-a7e1-03740f4f7cd8.png)
+
 
 1. 로그인 한 유저가 게시글 생성을 위해 서버에 요청한다
 
@@ -175,9 +196,17 @@ python manage.py runserver
 
 3. 제목 및 내용을 빈칸으로 두는 경우 등 서버는 데이터에 대한 유효성 검증 후 잘못된 형식의 타입 요청이 들어올 경우 에러를 반환한다
 
+**Response**
+![스크린샷 2021-11-03 오전 6 43 50](https://user-images.githubusercontent.com/42742076/139955994-2331a970-d4a9-4316-be25-530a4c0b53e3.png)
+
+
 <br>
 
 > 게시글 udate
+
+**Request**
+![스크린샷 2021-11-03 오전 6 47 21](https://user-images.githubusercontent.com/42742076/139956370-5596c7d3-934e-41f5-b621-7b036ef1d7f0.png)
+
 
 1. 게시글 수정을 위한 요청이 서버에 전송된다.(제목, 내용, 카테고리 수정 가능)
 
@@ -187,14 +216,43 @@ python manage.py runserver
 
 4. 정상적인 데이터의 경우 글을 수정한 후 success메시지를 전달한다
 
+**Response**
+![스크린샷 2021-11-03 오전 6 47 57](https://user-images.githubusercontent.com/42742076/139956426-ee37985b-b8d4-4663-a298-b5cf8b0950c9.png)
+
+
 <br>
 
 > 게시글 delete
+
+**Request**
+![스크린샷 2021-11-03 오전 6 48 41](https://user-images.githubusercontent.com/42742076/139956525-26f48e4c-4522-4fae-8d0e-f38e8a853517.png)
+
 1. 유저가 게시글 삭제를 위해 서버에 요청한다
 
 2. 요청을 받은 서버는 유저를 인가하기 위해 유저의 토큰을 검증한다(데코레이터 사용)
 
 3. 제목 및 내용을 빈칸으로 두는 경우 등 서버는 데이터에 대한 유효성 검증 후 잘못된 형식의 타입 요청이 들어올 경우 에러를 반환한다
+
+**Response**
+![스크린샷 2021-11-03 오전 6 49 12](https://user-images.githubusercontent.com/42742076/139956582-4823cf71-45f5-43d0-9de4-2cfab85f6b09.png)
+
+
+<br>
+
+> 게시글 댓글 작성
+
+**Request**
+![스크린샷 2021-11-03 오전 6 56 01](https://user-images.githubusercontent.com/42742076/139957282-e6a17665-695d-443e-935b-af6086233477.png)
+
+1. 유저가 게시글에 댓글을 작성한다.
+
+2. 요청을 받은 서버는 유저를 인가하기 위해 유저의 토큰을 검증한다(데코레이터 사용)
+
+3. 제목 및 내용을 빈칸으로 두는 경우 등 서버는 데이터에 대한 유효성 검증 후 잘못된 형식의 타입 요청이 들어올 경우 에러를 반환한다
+
+**Response**
+![스크린샷 2021-11-03 오전 6 57 15](https://user-images.githubusercontent.com/42742076/139957436-7067b62e-b31a-421d-a5de-cd5c5ce7fa20.png)
+
 
 <br>
 
@@ -251,7 +309,7 @@ if data["category"] != posting.category.name:
 1. 작성자, 제목, 카테고리 옵션을 선택해 검색할 데이터를 서버에 요청한다 
 
 ```bash
-127.0.0.1:8000/posting?title="축구"&offset=2&limit=1
+http://3.36.105.251:8000/posting?title="축구"&offset=2&limit=1
 ```
 
 2. Q객체와 icontains를 사용하여 옵션에 맞는 게시글 목록을 필터한다
@@ -379,7 +437,7 @@ parameter_token = openapi.Parameter(
 - Method : POST
 
 ```bash
-127.0.0.1:8000/users/signup
+http://3.36.105.251:8000/users/signup
 ```
 
 - parameter : request_body
@@ -398,7 +456,7 @@ parameter_token = openapi.Parameter(
 - Method : POST
 
 ```bash
-127.0.0.1:8000/users/signin
+http://3.36.105.251:8000/users/signin
 ```
 
 - parameter : request_body
@@ -415,7 +473,7 @@ parameter_token = openapi.Parameter(
 - Method : GET 
 
 ```bash
-127.0.0.1:8000/posting/list?offset=2&limit=1
+http://3.36.105.251:8000/posting/list?offset=2&limit=1
 ```
 
 - parameter : query_parameter
@@ -427,7 +485,7 @@ parameter_token = openapi.Parameter(
 - Method : GET
 
 ```bash
-127.0.0.1:8000/posting?title="축구"&offset=2&limit=1
+http://3.36.105.251:8000/posting?title="축구"&offset=2&limit=1
 ```
 
 - parameter : query_parameter
@@ -438,7 +496,7 @@ parameter_token = openapi.Parameter(
 - Method : PUT
 
 ```bash
-127.0.0.1:8000/postings/1
+http://3.36.105.251:8000/postings/1
 ```
 
 - parameter : path_parameter
@@ -452,7 +510,7 @@ parameter_token = openapi.Parameter(
 - Method : DELETE
 
 ```bash
-127.0.0.1:8000/postings/1
+http://3.36.105.251:8000/postings/1
 ```
 
 - parameter : path_parameter
