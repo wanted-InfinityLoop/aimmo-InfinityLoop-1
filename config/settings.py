@@ -106,3 +106,7 @@ CORS_ALLOW_HEADERS = (
     "x-csrftoken",
     "x-requested-with",
 )
+
+SWAGGER_SETTINGS = {
+    'JSON_EDITOR': True,
+}
