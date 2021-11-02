@@ -5,6 +5,7 @@ from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 
 from django.http import JsonResponse
+from django.db.models import Q
 
 from .models import Posting, Category
 from core.utils import login_decorator
@@ -156,8 +157,22 @@ class PostingListView(APIView):
         try:
             OFFSET = int(request.GET.get("offset", 0))
             LIMIT = int(request.GET.get("limit", 10))
+            CATEGORY = request.GET.get("category", None)
+            TITLE = request.GET.get("title", None)
+            USER_NAME = request.GET.get("username", None)
 
-            postings = Posting.objects.all().order_by("-created_time")[
+            q = Q()
+
+            if CATEGORY:
+                q &= Q(category__name = CATEGORY)
+            
+            if TITLE:
+                q &= Q(title__icontains = TITLE)
+
+            if USER_NAME:
+                q &= Q(author__name__icontains = USER_NAME)
+
+            postings = Posting.objects.filter(q).order_by("-created_time")[
                 OFFSET : OFFSET + LIMIT
             ]
 
