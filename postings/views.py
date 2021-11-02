@@ -13,9 +13,6 @@ from .serializer import PostingSerializer, CommentSerializer
 
 
 class PostingView(APIView):
-    '''
-    # 게시글 불러오기
-    '''
     parameter_token = openapi.Parameter(
         "Authorization",
         openapi.IN_HEADER,
@@ -23,9 +20,12 @@ class PostingView(APIView):
         type = openapi.TYPE_STRING
     )
 
-    @swagger_auto_schema(request_body = PostingSerializer, manual_parameters = [parameter_token])
+    @swagger_auto_schema(manual_parameters = [parameter_token])
     @login_decorator
     def get(self, request, posting_id):
+        '''
+        # 게시글 불러오기
+        '''
         if not Posting.objects.filter(id=posting_id).exists():
             return JsonResponse(
                 {"message": f"POSTING_{posting_id}_NOT_FOUND"}, status=404
@@ -50,13 +50,13 @@ class PostingView(APIView):
         }
         return JsonResponse({"result": result}, status=200)    
     
-    '''
-    # 게시글 수정
-    '''
     
     @swagger_auto_schema(request_body = PostingSerializer, manual_parameters = [parameter_token])
     @login_decorator
     def put(self, request, posting_id):
+        '''
+        # 게시글 수정
+        '''
         try:
             if not Posting.objects.filter(id=posting_id).exists():
                 return JsonResponse(
@@ -87,13 +87,12 @@ class PostingView(APIView):
             return JsonResponse({"message": "Category Does not Exist"}, status=404)
 
 
-    '''
-    # 게시글 삭제
-    '''
-
     @swagger_auto_schema(manual_parameters = [parameter_token])
     @login_decorator
     def delete(self, request, posting_id):
+        '''
+        # 게시글 삭제
+        '''
         try:
             if not Posting.objects.filter(id=posting_id).exists():
                 return JsonResponse(
@@ -115,10 +114,6 @@ class PostingView(APIView):
 
 
 class PostingCreateView(APIView):
-    '''
-    # 게시글 작성
-    '''
-
     parameter_token = openapi.Parameter(
         "Authorization",
         openapi.IN_HEADER,
@@ -128,6 +123,9 @@ class PostingCreateView(APIView):
     @swagger_auto_schema(request_body = PostingSerializer, manual_parameters = [parameter_token])
     @login_decorator
     def post(self, request):
+        '''
+        # 게시글 작성
+        '''
         try:
             data = json.loads(request.body)
             user = request.user
@@ -157,11 +155,10 @@ class PostingCreateView(APIView):
             return JsonResponse({"message": "Category not found"}, status=404)
 
 class PostingListView(APIView):
-    '''
-    # 게시글 목록 불러오기
-    '''
-
     def get(self, request):
+        '''
+        # 게시글 목록 불러오기
+        '''
         try:
             OFFSET = int(request.GET.get("offset", 0))
             LIMIT = int(request.GET.get("limit", 10))
@@ -205,19 +202,19 @@ class PostingListView(APIView):
             return JsonResponse({"message": "KEY_ERROR"}, status=400)
 
 class CommentView(APIView):
-    '''
-    # 댓글 작성 API
-    '''
-
-    # parameter_token = openapi.Parameter(
-    #     "Authorization",
-    #     openapi.IN_HEADER,
-    #     description = "access_token",
-    #     type = openapi.TYPE_STRING
-    # )
-    #@swagger_auto_schema(request_body = CommentSerializer, manual_parameters = [parameter_token])
+    parameter_token = openapi.Parameter(
+        "Authorization",
+        openapi.IN_HEADER,
+        description = "access_token",
+        type = openapi.TYPE_STRING
+    )
+    
+    @swagger_auto_schema(request_body = CommentSerializer, manual_parameters = [parameter_token])
     @login_decorator
     def post(self, request, posting_id):
+        '''
+        # 댓글 작성 API
+        '''
         try:
             data = json.loads(request.body)
             user = request.user
@@ -243,8 +240,11 @@ class CommentView(APIView):
         except KeyError:
             return JsonResponse({"message": "KEY_ERROR"}, status=400)
 
-    
+    #@swagger_auto_schema(manual_parameters = [parameter_query])
     def get(self, request, posting_id):
+        '''
+        # 댓글 조회 API
+        '''
         try:
             if not Posting.objects.filter(id = posting_id).exists():
                 return JsonResponse(
@@ -277,19 +277,18 @@ class CommentView(APIView):
 
 
 class SubCommentView(APIView):
-    '''
-    # 대댓글 작성 API
-    '''
-
-    # parameter_token = openapi.Parameter(
-    #     "Authorization",
-    #     openapi.IN_HEADER,
-    #     description = "access_token",
-    #     type = openapi.TYPE_STRING
-    # )
-    #@swagger_auto_schema(request_body = CommentSerializer, manual_parameters = [parameter_token])
+    parameter_token = openapi.Parameter(
+        "Authorization",
+        openapi.IN_HEADER,
+        description = "access_token",
+        type = openapi.TYPE_STRING
+    )
+    @swagger_auto_schema(request_body = CommentSerializer, manual_parameters = [parameter_token])
     @login_decorator
     def post(self, request, parent_comment_id):
+        '''
+        # 대댓글 작성 API
+        '''
         try:
             data = json.loads(request.body)
             user = request.user
