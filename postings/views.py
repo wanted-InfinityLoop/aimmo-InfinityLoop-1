@@ -5,9 +5,8 @@ from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 
 from django.http import JsonResponse
-from django.views import View
 
-from .models import Posting
+from .models import Posting, Category
 from core.utils import login_decorator
 from .serializer import PostingSerializer
 
@@ -30,6 +29,7 @@ class PostingView(APIView):
             "author": posting.author.name,
             "title": posting.title,
             "text": posting.text,
+            "category": posting.category.name,
             "created_time": posting.created_time,
             "updated_at": posting.updated_at,
         }
@@ -53,13 +53,18 @@ class PostingView(APIView):
                     {"message": f"POSTING_{posting_id}_NOT_FOUND"}, status=404
                 )
 
+            data = json.loads(request.body)
             posting = Posting.objects.get(id=posting_id)
+            category = Category.objects.get(name=data["category"])
 
             if request.user.id != posting.author_id:
                 return JsonResponse({"message": "FORBIDDEN"}, status=403)
 
-            data = json.loads(request.body)
-            posting.text = data["text"]
+            posting.text = data["text"] 
+
+            if data["category"] != posting.category.name:
+                posting.category_id = category.id
+
             posting.save()
 
             return JsonResponse(
@@ -67,6 +72,9 @@ class PostingView(APIView):
             )
         except KeyError:
             return JsonResponse({"message": "KEY_ERROR"}, status=400)
+
+        except Category.DoesNotExist:
+            return JsonResponse({"message": "Category Does not Exist"}, status=404)
 
 
     '''
@@ -114,10 +122,13 @@ class PostingCreateView(APIView):
             data = json.loads(request.body)
             user = request.user
 
+            category = Category.objects.get(name=data["category"])
+
             posting = Posting.objects.create(
                 title=data["title"],
                 text=data["text"],
                 author=user,
+                category=category,
             )
 
             return JsonResponse(
@@ -149,6 +160,7 @@ class PostingListView(APIView):
                         "author": posting.author.name,
                         "title": posting.title,
                         "text": posting.text,
+                        "category": posting.category.name,
                         "created_time": posting.created_time,
                         "updated_at": posting.updated_at,
                     }
