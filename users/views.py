@@ -68,7 +68,7 @@ class SigninView(APIView):
             ):
                 return JsonResponse({"message": "INVALID_USER"}, status=401)
 
-            token = jwt.encode({"id": user.id}, SECRET_KEY, algorithm="HS256")
+            token = jwt.encode({"id": user.id}, SECRET_KEY, algorithm="HS256").decode('utf-8')
             print('여기오낭', user, token)
             return JsonResponse(
                 {"message": "SUCCESS", "token": token, "username": user.name},
