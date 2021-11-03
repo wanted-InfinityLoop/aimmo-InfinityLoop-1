@@ -517,4 +517,6 @@ http://3.36.105.251:8000/postings/1
 
 
 ### 서버배포
-https://aimmo.herokuapp.com/swagger/
+
+postman API 확인 : http://3.36.105.251:8000/     
+swagger 확인 : https://aimmo.herokuapp.com/swagger/
