@@ -58,7 +58,6 @@ class SigninView(APIView):
     def post(self, request):
         try:
             data = json.loads(request.body)
-
             if not User.objects.filter(email=data["email"]).exists():
                 return JsonResponse({"message": "INVALID_USER"}, status=401)
 
@@ -70,6 +69,7 @@ class SigninView(APIView):
                 return JsonResponse({"message": "INVALID_USER"}, status=401)
 
             token = jwt.encode({"id": user.id}, SECRET_KEY, algorithm="HS256")
+            print('여기오낭', user, token)
             return JsonResponse(
                 {"message": "SUCCESS", "token": token, "username": user.name},
                 status=200,
