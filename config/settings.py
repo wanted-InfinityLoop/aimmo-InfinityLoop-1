@@ -67,8 +67,8 @@ DATABASES = {
         "CLIENT": {
             "host": env('HOST'),
             "port": 27017,
-            "username": env('HOST'),
-            "password": env('HOST'),
+            # "username": env('USERNAME'),
+            # "password": env('PASSWORD'),
             "authSource": "admin",
             "authMechanism": "SCRAM-SHA-1",
         },
