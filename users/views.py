@@ -10,7 +10,7 @@ from drf_yasg import openapi
 from django.http import JsonResponse
 
 from users.models import User
-from my_settings import MY_SECRET_KEY
+from config.my_settings import MY_SECRET_KEY
 from .serializer import UserSignInSerializer, UserSignUpSerializer
 
 

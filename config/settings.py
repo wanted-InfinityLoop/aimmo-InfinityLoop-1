@@ -1,5 +1,11 @@
 from pathlib import Path
-from my_settings import MY_DATABASES, MY_SECRET_KEY
+from config.my_settings import MY_DATABASES, MY_SECRET_KEY
+# import dj_database_url
+import environ
+import os
+env = environ.Env()
+environ.Env.read_env()
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = MY_SECRET_KEY
@@ -28,6 +34,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -50,7 +57,26 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "config.wsgi.application"
 
-DATABASES = MY_DATABASES
+# DATABASES = MY_DATABASES
+
+MY_DATABASES = {
+    "default": {
+        "ENGINE": "djongo",
+        "NAME": "Cluster0",
+        "CLIENT": {
+            "host": env('HOST'),
+            "port": 27017,
+            "username": env('HOST'),
+            "password": env('HOST'),
+            "authSource": "admin",
+            "authMechanism": "SCRAM-SHA-1",
+        },
+    }
+}
+
+
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -77,7 +103,11 @@ USE_L10N = True
 
 USE_TZ = True
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = "/static/"
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
@@ -110,3 +140,4 @@ CORS_ALLOW_HEADERS = (
 SWAGGER_SETTINGS = {
     'JSON_EDITOR': True,
 }
+
