@@ -1,5 +1,5 @@
 from pathlib import Path
-from config.my_settings import MY_DATABASES, MY_SECRET_KEY
+from my_settings import MY_DATABASES, MY_SECRET_KEY
 # import dj_database_url
 import environ
 import os
