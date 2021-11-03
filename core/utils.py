@@ -11,13 +11,13 @@ def login_decorator(func):
     def wrapper(self, request, *args, **kwargs):
         try:
             auth_header = request.headers.get("Authorization", None)
+            print(auth_header, '흠')
+            # if not (auth_header and auth_header.startswith("Bearer ")):
+            #     return JsonResponse({"message": "AUTH_ERROR"}, status=401)
 
-            if not (auth_header and auth_header.startswith("Bearer ")):
-                return JsonResponse({"message": "AUTH_ERROR"}, status=401)
+            # token = auth_header.split(" ")[1]
 
-            token = auth_header.split(" ")[1]
-
-            payload = jwt.decode(token, SECRET_KEY, algorithms="HS256")
+            payload = jwt.decode(auth_header, SECRET_KEY, algorithms="HS256")
             request.user = User.objects.get(id=payload["id"])
 
         except jwt.exceptions.DecodeError:
