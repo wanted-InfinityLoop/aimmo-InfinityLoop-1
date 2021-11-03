@@ -60,7 +60,7 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 # DATABASES = MY_DATABASES
 
-MY_DATABASES = {
+DATABASES = {
     "default": {
         "ENGINE": "djongo",
         "NAME": "Cluster0",
