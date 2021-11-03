@@ -3,6 +3,7 @@ from pathlib import Path
 # import dj_database_url
 import environ
 import os
+import django_heroku
 env = environ.Env()
 environ.Env.read_env()
 
@@ -141,3 +142,4 @@ SWAGGER_SETTINGS = {
     'JSON_EDITOR': True,
 }
 
+django_heroku.settings(locals(), databases=False),
