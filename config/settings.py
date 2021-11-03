@@ -1,5 +1,5 @@
 from pathlib import Path
-from my_settings import MY_DATABASES, MY_SECRET_KEY
+# from my_settings import MY_DATABASES, MY_SECRET_KEY
 # import dj_database_url
 import environ
 import os
@@ -8,7 +8,7 @@ environ.Env.read_env()
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = MY_SECRET_KEY
+SECRET_KEY = env('MY_SECRET_KEY')
 DEBUG = True
 ALLOWED_HOSTS = ["*"]
 

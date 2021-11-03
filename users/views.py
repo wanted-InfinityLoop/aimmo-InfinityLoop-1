@@ -10,7 +10,8 @@ from drf_yasg import openapi
 from django.http import JsonResponse
 
 from users.models import User
-from my_settings import MY_SECRET_KEY
+# from my_settings import MY_SECRET_KEY
+from config.settings import SECRET_KEY
 from .serializer import UserSignInSerializer, UserSignUpSerializer
 
 
@@ -68,7 +69,7 @@ class SigninView(APIView):
             ):
                 return JsonResponse({"message": "INVALID_USER"}, status=401)
 
-            token = jwt.encode({"id": user.id}, MY_SECRET_KEY, algorithm="HS256")
+            token = jwt.encode({"id": user.id}, SECRET_KEY, algorithm="HS256")
             return JsonResponse(
                 {"message": "SUCCESS", "token": token, "username": user.name},
                 status=200,
