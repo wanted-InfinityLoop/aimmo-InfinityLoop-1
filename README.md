@@ -18,7 +18,9 @@
 
 ### Build(AWS EC2)
 API Base URL : http://3.36.105.251:8000
-API Document URL : http://3.36.105.251:8000/swagger/ (현재 접속시 에러가 나는 현상이 있음)
+<br>
+
+API Document URL : http://3.36.105.251:8000/swagger/
 
 ### Required
 - Python3.7🔺
