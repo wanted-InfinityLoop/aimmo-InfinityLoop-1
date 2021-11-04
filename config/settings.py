@@ -4,7 +4,11 @@ from my_settings import MY_DATABASES, MY_SECRET_KEY
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = MY_SECRET_KEY
 DEBUG = True
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+        "*",
+        "3.36.105.251",
+        "3.36.105.251:8000"
+        ]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -114,3 +118,4 @@ SWAGGER_SETTINGS = {
     'JSON_EDITOR': True,
     'USE_SESSION_AUTH' : False,
 }
+
