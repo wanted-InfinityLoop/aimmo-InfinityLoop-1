@@ -1,0 +1,292 @@
+[2021-11-02 21:11:41 +0000] [19526] [INFO] Starting gunicorn 20.1.0
+[2021-11-02 21:11:41 +0000] [19526] [INFO] Listening at: http://0.0.0.0:8000 (19526)
+[2021-11-02 21:11:41 +0000] [19526] [INFO] Using worker: sync
+[2021-11-02 21:11:41 +0000] [19527] [INFO] Booting worker with pid: 19527
+[2021-11-02 21:12:27 +0000] [19526] [CRITICAL] WORKER TIMEOUT (pid:19527)
+[2021-11-02 21:12:27 +0000] [19527] [INFO] Worker exiting (pid: 19527)
+[2021-11-02 21:12:27 +0000] [19531] [INFO] Booting worker with pid: 19531
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /static/drf-yasg/swagger-ui-dist/favicon-32x32.png
+Not Found: /accounts/login/
+Not Found: /favicon.ico
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /swagger
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /swagger
+Not Found: /favicon.ico
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/redoc-init.js
+Not Found: /static/drf-yasg/redoc/redoc.min.js
+Not Found: /static/drf-yasg/redoc/redoc-logo.png
+Not Found: /swagger
+Not Found: /redoc
+Not Found: /static/drf-yasg/style.css
+Not Found: /
+[2021-11-02 21:31:26 +0000] [19526] [CRITICAL] WORKER TIMEOUT (pid:19531)
+[2021-11-02 21:31:26 +0000] [19531] [INFO] Worker exiting (pid: 19531)
+[2021-11-02 21:31:26 +0000] [19738] [INFO] Booting worker with pid: 19738
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/redoc-init.js
+Not Found: /static/drf-yasg/redoc/redoc.min.js
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/redoc-init.js
+Not Found: /static/drf-yasg/redoc/redoc.min.js
+Not Found: /static/drf-yasg/redoc/redoc-logo.png
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /static/drf-yasg/swagger-ui-dist/favicon-32x32.png
+Not Found: /accounts/login/
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/redoc-init.js
+Not Found: /static/drf-yasg/redoc/redoc.min.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/redoc-init.js
+Not Found: /static/drf-yasg/redoc/redoc.min.js
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /accounts/login/
+[2021-11-02 21:33:33 +0000] [19526] [CRITICAL] WORKER TIMEOUT (pid:19738)
+[2021-11-02 21:33:33 +0000] [19738] [INFO] Worker exiting (pid: 19738)
+[2021-11-02 21:33:33 +0000] [19750] [INFO] Booting worker with pid: 19750
+[2021-11-02 21:34:04 +0000] [19526] [CRITICAL] WORKER TIMEOUT (pid:19750)
+[2021-11-02 21:34:04 +0000] [19750] [INFO] Worker exiting (pid: 19750)
+[2021-11-02 21:34:05 +0000] [19751] [INFO] Booting worker with pid: 19751
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /
+Not Found: /posting
+Not Found: /favicon.ico
+Not Found: /swagger
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /static/drf-yasg/swagger-ui-dist/favicon-32x32.png
+Not Found: /accounts/login/
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /accounts/login/
+[2021-11-03 03:03:29 +0000] [19526] [CRITICAL] WORKER TIMEOUT (pid:19751)
+[2021-11-03 03:03:29 +0000] [19751] [INFO] Worker exiting (pid: 19751)
+[2021-11-03 03:03:29 +0000] [20897] [INFO] Booting worker with pid: 20897
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /static/drf-yasg/swagger-ui-dist/favicon-32x32.png
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /static/drf-yasg/swagger-ui-dist/favicon-32x32.png
+Not Found: /accounts/login/
+Not Found: /accounts/login/
+Not Found: /favicon.ico
+Not Found: /
+[2021-11-03 03:05:19 +0000] [19526] [CRITICAL] WORKER TIMEOUT (pid:20897)
+[2021-11-03 03:05:19 +0000] [20897] [INFO] Worker exiting (pid: 20897)
+[2021-11-03 03:05:19 +0000] [20900] [INFO] Booting worker with pid: 20900
+[2021-11-03 03:05:50 +0000] [19526] [CRITICAL] WORKER TIMEOUT (pid:20900)
+[2021-11-03 03:05:50 +0000] [20900] [INFO] Worker exiting (pid: 20900)
+[2021-11-03 03:05:50 +0000] [20902] [INFO] Booting worker with pid: 20902
+Bad Request: /users/signup
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Method Not Allowed: /swagger/
+Bad Request: /users/signup
+Not Found: /
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /static/drf-yasg/swagger-ui-dist/favicon-32x32.png
+[2021-11-03 06:22:06 +0000] [19526] [CRITICAL] WORKER TIMEOUT (pid:20902)
+[2021-11-03 06:22:06 +0000] [20902] [INFO] Worker exiting (pid: 20902)
+[2021-11-03 06:22:06 +0000] [21201] [INFO] Booting worker with pid: 21201
+Not Found: /
+Not Found: /
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /accounts/login/
+Not Found: /accounts/login/
+Not Found: /static/drf-yasg/style.css
+Not Found: /accounts/login/
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+[2021-11-03 06:24:24 +0000] [19526] [CRITICAL] WORKER TIMEOUT (pid:21201)
+[2021-11-03 06:24:24 +0000] [21201] [INFO] Worker exiting (pid: 21201)
+[2021-11-03 06:24:24 +0000] [21204] [INFO] Booting worker with pid: 21204
+Not Found: /static/drf-yasg/swagger-ui-init.js
+[2021-11-03 06:24:55 +0000] [19526] [CRITICAL] WORKER TIMEOUT (pid:21204)
+[2021-11-03 06:24:55 +0000] [21204] [INFO] Worker exiting (pid: 21204)
+[2021-11-03 06:24:56 +0000] [21206] [INFO] Booting worker with pid: 21206
+[2021-11-03 06:25:27 +0000] [19526] [CRITICAL] WORKER TIMEOUT (pid:21206)
+[2021-11-03 06:25:27 +0000] [21206] [INFO] Worker exiting (pid: 21206)
+[2021-11-03 06:25:27 +0000] [21348] [INFO] Booting worker with pid: 21348
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /
+Not Found: /favicon.ico
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /static/drf-yasg/swagger-ui-dist/favicon-32x32.png
+Not Found: /accounts/login/
+Not Found: /favicon.ico
+Not Found: /static/drf-yasg/style.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui.css
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-bundle.js
+Not Found: /static/drf-yasg/swagger-ui-dist/swagger-ui-standalone-preset.js
+Not Found: /static/drf-yasg/insQ.min.js
+Not Found: /static/drf-yasg/immutable.min.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /static/drf-yasg/url-polyfill.min.js
+Not Found: /static/drf-yasg/swagger-ui-init.js
+Not Found: /
+Not Found: /accounts/login/
+[2021-11-03 10:57:54 +0000] [19526] [CRITICAL] WORKER TIMEOUT (pid:21348)
+[2021-11-03 10:57:54 +0000] [21348] [INFO] Worker exiting (pid: 21348)
+[2021-11-03 10:57:54 +0000] [26978] [INFO] Booting worker with pid: 26978
+[2021-11-03 10:58:25 +0000] [19526] [CRITICAL] WORKER TIMEOUT (pid:26978)
+[2021-11-03 10:58:25 +0000] [26978] [INFO] Worker exiting (pid: 26978)
+[2021-11-03 10:58:25 +0000] [26979] [INFO] Booting worker with pid: 26979
+Not Found: /443
+Not Found: /
+Not Found: /
+Not Found: /
